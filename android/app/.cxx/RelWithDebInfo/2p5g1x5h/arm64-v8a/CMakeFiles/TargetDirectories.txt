@@ -1,0 +1,2 @@
+E:/my_fluttter_projects/eataa/android/app/.cxx/RelWithDebInfo/2p5g1x5h/arm64-v8a/CMakeFiles/edit_cache.dir
+E:/my_fluttter_projects/eataa/android/app/.cxx/RelWithDebInfo/2p5g1x5h/arm64-v8a/CMakeFiles/rebuild_cache.dir
