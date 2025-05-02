@@ -7,7 +7,7 @@ class OrganizationsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.only(right:24,left: 24,top: 24),
       child: const OrganizationsList(),
     );
   }

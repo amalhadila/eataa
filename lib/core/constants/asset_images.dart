@@ -1,4 +1,5 @@
 abstract class AssetImages {
-  static const logo ='assets/logo.gif';
+  static const splash ='assets/Splash-Screen.png';
+  static const logo ='assets/عطاء (1).png';
 
 }

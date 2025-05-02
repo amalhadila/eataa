@@ -1,9 +1,11 @@
+import 'package:eataa/core/constants/asset_images.dart';
 import 'package:eataa/core/theme/color_app.dart';
 import 'package:eataa/core/theme/styles.dart';
 import 'package:eataa/features/home/presentation/views/contactus_view.dart';
 import 'package:eataa/features/home/presentation/views/home_view.dart';
 import 'package:eataa/features/home/presentation/views/policy_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -33,61 +35,56 @@ class _BottomBarState extends State<BottomBar> {
   }
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor:Colors.white,
       appBar:currentindex==0? AppBar(
-        backgroundColor: Colors.white,
+       //shadowColor: ColorApp.primaryColor,
         automaticallyImplyLeading: false,
-         title: ( _isSearchActive && currentindex==0)
-          ? TextField(
-            onChanged: (value) {
-              setState(() {
-                search_text=value;
-                _pages[0] = HomeView();
-              });
-            },
-              controller: _searchController,
-              style: Styles.textStyle18.copyWith(color: Colors.black),
-              decoration: InputDecoration(
-                hintText: 'Search...',
-                hintStyle: TextStyle(color: Colors.black.withOpacity(0.5)),
-                border: InputBorder.none,
-              ),
-            ):
+      
+         title:
             Text('عطاء',style: Styles.textStyle18),
 
             
         actions: [  
-              IconButton(onPressed: (){
-                setState(() {
-              _isSearchActive = !_isSearchActive;
-              if (!_isSearchActive) {
-                 search_text='';
-                _pages[0] = HomeView();
-                _searchController.clear();
-              }
-            });
-
-              }, icon: Icon(( _isSearchActive && currentindex==0)
-          ? Icons.close : Icons.search),),
-              const SizedBox(width: 10,),
-                        
+          Image.asset(AssetImages.logo,
+           width: AppBar().preferredSize.height,  
+          height: AppBar().preferredSize.height,
+          fit: BoxFit.contain,),                   
             
          
         ],
       ):currentindex==1?AppBar(
         automaticallyImplyLeading: false,
+       
         title: Text('سياسة الخصوصية',style: Styles.textStyle18),
-        backgroundColor: Colors.white,
+         actions: [  
+          Image.asset(AssetImages.logo,
+           width: AppBar().preferredSize.height,  
+          height: AppBar().preferredSize.height,
+          fit: BoxFit.contain,),                   
+            
+         
+        ],
+       // backgroundColor: Colors.white,
       ):AppBar(
         automaticallyImplyLeading: false,
+       
         title: Text('تواصل معنا',style: Styles.textStyle18),
-        backgroundColor: Colors.white,
+         actions: [  
+          Image.asset(AssetImages.logo,
+           width: AppBar().preferredSize.height,  
+          height: AppBar().preferredSize.height,
+          fit: BoxFit.contain,),                   
+            
+         
+        ],
+        //backgroundColor: Colors.white,
       ),
       body: _pages[currentindex],
       bottomNavigationBar: BottomNavigationBar(  
-        backgroundColor: Colors.white,    
+
+        backgroundColor: ColorApp.backgroundColor,    
          type: BottomNavigationBarType.fixed,
-        elevation: 0,
+         
+        elevation: 10,
       onTap: (value){        
         setState(() {
           currentindex=value;

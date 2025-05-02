@@ -1,6 +1,7 @@
 import 'package:eataa/core/constants/asset_images.dart';
 import 'package:eataa/features/home/presentation/views/widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashViewmodel extends StatefulWidget {
   const SplashViewmodel({super.key});
@@ -22,27 +23,20 @@ class _SplashViewmodelState extends State<SplashViewmodel> {
   }
   Widget build(BuildContext context) {
     return  SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal:5.0),
-        child: Column(
+      child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Spacer(flex: 4,),
-            Image.asset(AssetImages.logo,width: MediaQuery.of(context).size.width,
+            // SvgPicture.asset(AssetImages.logo,width: MediaQuery.of(context).size.width,
+            // height: MediaQuery.of(context).size.height,fit: BoxFit.fill,),
+            Image.asset(AssetImages.splash,width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,fit: BoxFit.fill,),                      
-            // Text('WhatsUp',style: Styles.textStyle24,),
            
-           
-           // const Spacer(),
-          //  Center(child: Text('The best chat app of this century',style: Styles.textStyle18,)),
-           
-           
-           // const Spacer(flex: 4,),
         
           ],
         ),
-      ),
+      
     );
   }
 }
